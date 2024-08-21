@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'cn.feng'
+version = '1.0-SNAPSHOT'
+
+project.ext.lwjglVersion = "3.3.4"
+project.ext.lwjglNatives = "natives-windows"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
+
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-glfw"
+    implementation "org.lwjgl:lwjgl-nanovg"
+    implementation "org.lwjgl:lwjgl-openal"
+    implementation "org.lwjgl:lwjgl-opengl"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-nanovg::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.16.0'
+    implementation group: 'org.jetbrains', name: 'annotations', version: '24.1.0'
+}
