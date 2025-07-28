@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'cn.feng'
+version = '1.0-SNAPSHOT'
+
+project.ext.lwjglVersion = "3.3.6"
+project.ext.lwjglNatives = "natives-windows"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
+
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-glfw"
+    implementation "org.lwjgl:lwjgl-openal"
+    implementation "org.lwjgl:lwjgl-opengl"
+    implementation "org.lwjgl:lwjgl::$lwjglNatives"
+    implementation "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    implementation "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    implementation "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+
+    implementation group: 'org.jetbrains', name: 'annotations', version: '24.1.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.18.0'
+}
+
+shadowJar {
+    dependencies {
+        include(dependency("org.lwjgl:lwjgl"))
+        include(dependency("org.lwjgl:lwjgl-glfw"))
+        include(dependency("org.lwjgl:lwjgl-openal"))
+        include(dependency("org.lwjgl:lwjgl-opengl"))
+    }
+}
