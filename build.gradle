@@ -37,3 +37,5 @@ shadowJar {
         include(dependency("org.lwjgl:lwjgl-opengl"))
     }
 }
+
+build.dependsOn shadowJar
