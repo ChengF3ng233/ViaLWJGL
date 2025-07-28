@@ -4,11 +4,11 @@
 
 ### Usage (Gradle)
 ```groovy
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
+repositories {
+    maven { url 'https://jitpack.io' }
+}
 
-    dependencies {
-        implementation 'com.github.ChengF3ng233:ViaLWJGL:v1.0'
-    }
+dependencies {
+    implementation 'com.github.ChengF3ng233:ViaLWJGL:v1.0'
+}
 ```
