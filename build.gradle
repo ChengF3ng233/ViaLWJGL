@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
@@ -36,6 +37,8 @@ shadowJar {
         include(dependency("org.lwjgl:lwjgl-glfw"))
         include(dependency("org.lwjgl:lwjgl-openal"))
         include(dependency("org.lwjgl:lwjgl-opengl"))
+        include(dependency("org.jetbrains:annotations:24.1.0"))
+        include(dependency("org.apache.commons:commons-lang3:3.18.0"))
     }
 }
 
