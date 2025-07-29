@@ -4,8 +4,18 @@
 
 ### Install
 
-1. Download the latest build from `Github Release` to the folder `libs` in your project.
-2. Add `implementation fileTree(dir: 'libs', include: ['*.jar'])` to the `dependencies` block in `build.gradle`
+- build.gradle
+```groovy
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation 'com.github.ChengF3ng233:ViaLWJGL:-SNAPSHOT'
+}
+```
 
 ### Error fixes
 
